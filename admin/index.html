@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Devanka IT Solutions</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <style>
+        body { background-color: #f8f9fa; }
+        .admin-container { max-width: 1200px; margin: 50px auto; }
+        .login-container { max-width: 400px; margin: 150px auto; }
+        .nav-tabs .nav-link { color: #6c757d; }
+        .nav-tabs .nav-link.active { color: #0d6efd; border-bottom: 3px solid #0d6efd; }
+    </style>
+</head>
+<body>
+
+    <!-- Login Section -->
+    <div class="container login-container" id="login-section">
+        <div class="card shadow border-0 rounded">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <h2 class="text-primary fw-bold">Devanka Admin</h2>
+                    <p class="text-muted">Sign in to manage your website</p>
+                </div>
+                <form id="adminLoginForm">
+                    <div id="loginMessage" class="d-none alert"></div>
+                    <div class="mb-3 form-floating">
+                        <input type="email" id="adminEmail" class="form-control" placeholder="Email" required>
+                        <label>Email Address</label>
+                    </div>
+                    <div class="mb-4 form-floating">
+                        <input type="password" id="adminPassword" class="form-control" placeholder="Password" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="container admin-container d-none" id="dashboard-section">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="text-primary fw-bold mb-0">Admin Dashboard</h1>
+                <p class="text-muted">Manage your dynamic content below</p>
+            </div>
+            <button id="logoutBtn" class="btn btn-outline-danger rounded-pill px-4">Logout</button>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4 border-0" id="adminTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold border-0 bg-transparent" id="submissions-tab" data-bs-toggle="tab" data-bs-target="#submissions-panel" type="button" role="tab">Contact Submissions</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold border-0 bg-transparent" id="products-tab" data-bs-toggle="tab" data-bs-target="#products-panel" type="button" role="tab">Manage Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold border-0 bg-transparent" id="team-tab" data-bs-toggle="tab" data-bs-target="#team-panel" type="button" role="tab">Manage Team</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold border-0 bg-transparent" id="cases-tab" data-bs-toggle="tab" data-bs-target="#cases-panel" type="button" role="tab">Case Studies</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold border-0 bg-transparent" id="testimonials-tab" data-bs-toggle="tab" data-bs-target="#testimonials-panel" type="button" role="tab">Testimonials</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="adminTabsContent">
+
+            <!-- Contact Submissions Panel -->
+            <div class="tab-pane fade show active" id="submissions-panel" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded mb-4">
+                    <div class="card-header bg-white border-bottom py-3">
+                        <h4 class="mb-0 text-dark"><i class="fas fa-envelope text-primary me-2"></i> Contact Form Submissions</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th class="py-3 px-4">Date</th>
+                                        <th class="py-3">Name</th>
+                                        <th class="py-3">Email</th>
+                                        <th class="py-3">Phone</th>
+                                        <th class="py-3">Project</th>
+                                        <th class="py-3">Subject</th>
+                                        <th class="py-3 px-4">Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="submissionsTableBody">
+                                    <tr><td colspan="7" class="text-center py-5"><div class="spinner-border text-primary" role="status"></div></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Panel -->
+            <div class="tab-pane fade" id="products-panel" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm border-0 rounded">
+                            <div class="card-header bg-white border-bottom py-3">
+                                <h5 class="mb-0 text-dark"><i class="fas fa-plus text-primary me-2"></i> Add Product</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="addProductForm">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">TITLE</label>
+                                        <input type="text" id="prodTitle" class="form-control" required placeholder="e.g. Uniscouter">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">DESCRIPTION</label>
+                                        <textarea id="prodDesc" class="form-control" rows="3" required placeholder="Short description..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">LINK URL</label>
+                                        <input type="url" id="prodLink" class="form-control" required placeholder="https://uniscouter.com/">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">UPLOAD MAIN IMAGE</label>
+                                        <input type="file" id="prodImgFile" class="form-control" accept="image/*" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted small fw-bold">UPLOAD LOGO (Small Circle)</label>
+                                        <input type="file" id="prodLogoFile" class="form-control" accept="image/*" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2">Save Product</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm border-0 rounded h-100">
+                            <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0 text-dark"><i class="fas fa-box-open text-primary me-2"></i> Current Products</h5>
+                                <button class="btn btn-sm btn-outline-primary" onclick="loadProducts()">Refresh</button>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="py-3 px-4">Title</th>
+                                                <th class="py-3">Link</th>
+                                                <th class="py-3 px-4 text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="productsTableBody">
+                                            <tr><td colspan="3" class="text-center py-4 text-muted"><div class="spinner-border text-primary" role="status"></div></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Panel -->
+            <div class="tab-pane fade" id="team-panel" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm border-0 rounded">
+                            <div class="card-header bg-white border-bottom py-3">
+                                <h5 class="mb-0 text-dark"><i class="fas fa-plus text-primary me-2"></i> Add Team Member</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="addTeamForm">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">FULL NAME</label>
+                                        <input type="text" id="teamName" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">POSITION / ROLE</label>
+                                        <input type="text" id="teamRole" class="form-control" required placeholder="e.g. Founder &amp; CEO">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">UPLOAD PHOTO</label>
+                                        <input type="file" id="teamPhoto" class="form-control" accept="image/*" required>
+                                    </div>
+                                    <h6 class="mt-4 mb-2 text-primary">Social Links (Optional)</h6>
+                                    <div class="mb-2">
+                                        <input type="url" id="teamFb" class="form-control form-control-sm" placeholder="Facebook URL">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="url" id="teamTwitter" class="form-control form-control-sm" placeholder="Twitter URL">
+                                    </div>
+                                    <div class="mb-2">
+                                        <input type="url" id="teamLinkedin" class="form-control form-control-sm" placeholder="LinkedIn URL">
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="url" id="teamInsta" class="form-control form-control-sm" placeholder="Instagram URL">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2">Save Member</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm border-0 rounded h-100">
+                            <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0 text-dark"><i class="fas fa-users text-primary me-2"></i> Current Team</h5>
+                                <button class="btn btn-sm btn-outline-primary" onclick="loadTeam()">Refresh</button>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="py-3 px-4">Photo</th>
+                                                <th class="py-3">Name</th>
+                                                <th class="py-3">Position</th>
+                                                <th class="py-3 px-4 text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="teamTableBody">
+                                            <tr><td colspan="4" class="text-center py-4"><div class="spinner-border text-primary" role="status"></div></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Panel -->
+            <div class="tab-pane fade" id="testimonials-panel" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm border-0 rounded">
+                            <div class="card-header bg-white border-bottom py-3">
+                                <h5 class="mb-0 text-dark" id="testiFormTitle"><i class="fas fa-plus-circle text-primary me-2"></i> Add Testimonial</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="addTestimonialForm">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">CLIENT NAME</label>
+                                        <input type="text" class="form-control" id="testiName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">ROLE</label>
+                                        <input type="text" class="form-control" id="testiRole" placeholder="e.g. CEO">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">COMPANY</label>
+                                        <input type="text" class="form-control" id="testiCompany" placeholder="e.g. Devanka">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">QUOTE</label>
+                                        <textarea class="form-control" id="testiQuote" rows="4" required></textarea>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label class="form-label text-muted small fw-bold">RATING</label>
+                                            <select class="form-select" id="testiRating">
+                                                <option value="5" selected>5 Stars</option>
+                                                <option value="4">4 Stars</option>
+                                                <option value="3">3 Stars</option>
+                                                <option value="2">2 Stars</option>
+                                                <option value="1">1 Star</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6 d-flex align-items-center mt-4">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="testiPublished" checked>
+                                                <label class="form-check-label text-muted small fw-bold" for="testiPublished">PUBLISHED</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted small fw-bold">CLIENT PHOTO</label>
+                                        <input type="file" class="form-control" id="testiPhoto" accept="image/*">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold">Save Testimonial</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm border-0 rounded h-100">
+                            <div class="card-header bg-white border-bottom py-3">
+                                <h5 class="mb-0 text-dark"><i class="fas fa-list text-primary me-2"></i> All Testimonials</h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="py-3 px-4">Photo</th>
+                                                <th class="py-3">Client</th>
+                                                <th class="py-3">Rating</th>
+                                                <th class="py-3">Status</th>
+                                                <th class="py-3 px-4 text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="testimonialTableBody">
+                                            <tr><td colspan="5" class="text-center py-4 text-muted">Loading...</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Studies Panel -->
+            <div class="tab-pane fade" id="cases-panel" role="tabpanel">
+
+                <!-- List View -->
+                <div id="case-list-view">
+                    <div class="card shadow-sm border-0 rounded h-100">
+                        <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 text-dark"><i class="fas fa-briefcase text-primary me-2"></i> Published Case Studies</h5>
+                            <div>
+                                <button class="btn btn-sm btn-outline-primary me-2" onclick="loadCases()"><i class="fas fa-sync-alt"></i> Refresh</button>
+                                <button class="btn btn-sm btn-primary" onclick="showCaseEditor()"><i class="fas fa-plus"></i> Add New Case Study</button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th class="py-3 px-4">Title</th>
+                                            <th class="py-3">Type</th>
+                                            <th class="py-3">Status</th>
+                                            <th class="py-3 px-4 text-end">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="caseTableBody">
+                                        <tr><td colspan="4" class="text-center py-4 text-muted">Loading...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editor View -->
+                <div id="case-editor-view" class="d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="mb-0"><span style="cursor:pointer" onclick="showCaseList()"><i class="fas fa-arrow-left me-2 text-primary"></i></span> Create New Case Study</h4>
+                        <button class="btn btn-primary px-4 rounded-pill fw-bold" onclick="saveCaseStudy()"><i class="fas fa-save me-2"></i> Save Case Study</button>
+                    </div>
+
+                    <div class="row">
+                        <!-- Sidebar Navigation -->
+                        <div class="col-md-3 mb-4">
+                            <div class="nav flex-column nav-pills shadow-sm rounded bg-white p-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-basic" type="button"><i class="fas fa-info-circle me-2" style="width:20px"></i> Basic Info</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-hero" type="button"><i class="fas fa-image me-2" style="width:20px"></i> Hero Section</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-problem" type="button"><i class="fas fa-exclamation-circle me-2" style="width:20px"></i> Problem &amp; Solution</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-features" type="button"><i class="fas fa-star me-2" style="width:20px"></i> Key Features</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-tech" type="button"><i class="fas fa-code me-2" style="width:20px"></i> Tech Stack</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-challenges" type="button"><i class="fas fa-tools me-2" style="width:20px"></i> Challenges</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-results" type="button"><i class="fas fa-chart-line me-2" style="width:20px"></i> Results &amp; Metrics</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-gallery" type="button"><i class="fas fa-images me-2" style="width:20px"></i> Gallery</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-testimonial" type="button"><i class="fas fa-quote-left me-2" style="width:20px"></i> Testimonial</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-timeline" type="button"><i class="fas fa-calendar-alt me-2" style="width:20px"></i> Timeline</button>
+                                <button class="nav-link text-start mb-1 fw-bold" data-bs-toggle="pill" data-bs-target="#v-pills-seo" type="button"><i class="fas fa-search me-2" style="width:20px"></i> SEO</button>
+                            </div>
+                        </div>
+
+                        <!-- Content Area -->
+                        <div class="col-md-9">
+                            <div class="tab-content bg-white p-4 rounded shadow-sm border h-100" id="v-pills-tabContent">
+
+                                <!-- Basic Info -->
+                                <div class="tab-pane fade show active" id="v-pills-basic">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Basic Information</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">PROJECT TITLE</label>
+                                        <input type="text" id="csTitle" class="form-control" placeholder="e.g. Uniscouter">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">PROJECT TYPE</label>
+                                        <select id="csType" class="form-select">
+                                            <option value="Client Project">Client Project</option>
+                                            <option value="Internal Product">Internal Product</option>
+                                            <option value="SaaS">SaaS</option>
+                                            <option value="Mobile App">Mobile App</option>
+                                            <option value="Enterprise System">Enterprise System</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">STATUS</label>
+                                        <select id="csStatus" class="form-select">
+                                            <option value="Live">Live</option>
+                                            <option value="Recently Launched">Recently Launched</option>
+                                            <option value="In Development">In Development</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">INDUSTRY</label>
+                                        <input type="text" id="csIndustry" class="form-control" placeholder="e.g. Education, Fintech, Healthcare">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">WEBSITE URL</label>
+                                        <input type="url" id="csUrl" class="form-control" placeholder="https://...">
+                                    </div>
+                                </div>
+
+                                <!-- Hero Section -->
+                                <div class="tab-pane fade" id="v-pills-hero">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Hero Section</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">HEADLINE</label>
+                                        <input type="text" id="csHeadline" class="form-control" placeholder="e.g. Helping students discover universities...">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">SHORT SUMMARY</label>
+                                        <textarea id="csSummary" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">COVER IMAGE (HERO)</label>
+                                        <input type="file" id="csHeroImage" class="form-control" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <!-- Problem & Solution -->
+                                <div class="tab-pane fade" id="v-pills-problem">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Problem &amp; Solution</h5>
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted small fw-bold">PROBLEM STATEMENT</label>
+                                        <textarea id="csProblem" class="form-control" rows="4" placeholder="Describe the problem..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">SOLUTION DESCRIPTION</label>
+                                        <textarea id="csSolution" class="form-control" rows="4" placeholder="How did you solve it?"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Features -->
+                                <div class="tab-pane fade" id="v-pills-features">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Key Features</h5>
+                                    <div id="featuresList"></div>
+                                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="addFeatureField()"><i class="fas fa-plus"></i> Add Feature</button>
+                                </div>
+
+                                <!-- Tech Stack -->
+                                <div class="tab-pane fade" id="v-pills-tech">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Tech Stack</h5>
+                                    <p class="text-muted small mb-2">Type a technology and press Enter to add a badge.</p>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <input type="text" id="techInput" class="form-control me-2" placeholder="e.g. Next.js" onkeypress="handleTechInput(event)">
+                                        <button class="btn btn-primary" onclick="addTechBadge()">Add</button>
+                                    </div>
+                                    <div id="techBadgesContainer" class="d-flex flex-wrap gap-2"></div>
+                                </div>
+
+                                <!-- Challenges -->
+                                <div class="tab-pane fade" id="v-pills-challenges">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Challenges &amp; Solutions</h5>
+                                    <div id="challengesList"></div>
+                                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="addChallengeField()"><i class="fas fa-plus"></i> Add Challenge</button>
+                                </div>
+
+                                <!-- Results & Metrics -->
+                                <div class="tab-pane fade" id="v-pills-results">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Results &amp; Metrics</h5>
+                                    <div id="metricsList"></div>
+                                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="addMetricField()"><i class="fas fa-plus"></i> Add Metric</button>
+                                </div>
+
+                                <!-- Gallery -->
+                                <div class="tab-pane fade" id="v-pills-gallery">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Screenshots Gallery</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">UPLOAD IMAGES</label>
+                                        <input type="file" id="csGalleryFiles" class="form-control" accept="image/*" multiple>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial -->
+                                <div class="tab-pane fade" id="v-pills-testimonial">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Testimonial (Optional)</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">CLIENT NAME</label>
+                                        <input type="text" id="csTestiName" class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label text-muted small fw-bold">ROLE</label>
+                                            <input type="text" id="csTestiRole" class="form-control">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label text-muted small fw-bold">COMPANY</label>
+                                            <input type="text" id="csTestiCompany" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">QUOTE</label>
+                                        <textarea id="csTestiQuote" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">CLIENT PHOTO</label>
+                                        <input type="file" id="csTestiPhoto" class="form-control" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <!-- Timeline -->
+                                <div class="tab-pane fade" id="v-pills-timeline">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">Timeline</h5>
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label text-muted small fw-bold">STARTED DATE</label>
+                                            <input type="text" id="csStartDate" class="form-control" placeholder="e.g. Jan 2026">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label text-muted small fw-bold">LAUNCH DATE</label>
+                                            <input type="text" id="csLaunchDate" class="form-control" placeholder="e.g. May 2026">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label text-muted small fw-bold">DURATION</label>
+                                            <input type="text" id="csDuration" class="form-control" placeholder="e.g. 4 Months">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SEO -->
+                                <div class="tab-pane fade" id="v-pills-seo">
+                                    <h5 class="mb-4 text-primary border-bottom pb-2">SEO Settings</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">URL SLUG</label>
+                                        <input type="text" id="csSlug" class="form-control" placeholder="e.g. uniscouter-case-study">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">META TITLE</label>
+                                        <input type="text" id="csMetaTitle" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted small fw-bold">META DESCRIPTION</label>
+                                        <textarea id="csMetaDesc" class="form-control" rows="2"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End Case Studies Panel -->
+
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal fade" id="editProductModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title text-primary"><i class="fas fa-edit me-2"></i> Edit Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="editProductForm">
+                        <input type="hidden" id="editProdId">
+                        <input type="hidden" id="editProdCurrentImg">
+                        <input type="hidden" id="editProdCurrentLogo">
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">TITLE</label>
+                            <input type="text" id="editProdTitle" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">DESCRIPTION</label>
+                            <textarea id="editProdDesc" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">LINK URL</label>
+                            <input type="url" id="editProdLink" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">UPDATE MAIN IMAGE (Optional)</label>
+                            <input type="file" id="editProdImgFile" class="form-control" accept="image/*">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-muted small fw-bold">UPDATE LOGO (Optional)</label>
+                            <input type="file" id="editProdLogoFile" class="form-control" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2">Update Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/admin/dashboard.js"></script>
+    <script src="js/admin/cases.js"></script>
+    <script src="js/admin/testimonials.js"></script>
+</body>
+</html>

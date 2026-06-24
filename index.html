@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
         <title>Devanka IT Solutions Pvt. Ltd.</title>
-        <link rel="icon" type="image/png" href="logo1.png">
+        <link rel="icon" type="image/png" href="assets/logos/logo1.png">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Devanka IT Solutions Pvt. Ltd. Software, IT & Digital Marketing Compan in Pokhara,Nepal" name="keywords">
         <meta content="Devanka IT Solutions Pvt. Ltd. offers software development, IT services, web design, SEO, digital marketing & branding in Nepal. Reliable, affordable & result driven." name="description">
@@ -68,7 +68,21 @@
         
     </head>
 
-    <body>
+    <style>
+    /* Fix for any trailing white gap at the bottom */
+    html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+    body {
+        top: 0 !important;
+    }
+    .skiptranslate iframe {
+        display: none !important;
+    }
+</style>
+<body>
 
         <div id="google_translate_element" style="display: none;"></div>
         
@@ -97,13 +111,13 @@
                     <div class="col-lg-4 text-center text-lg-end">
                         <div class="d-flex justify-content-end">
                             <div class="d-flex border-end border-primary pe-3">
-                                <a class="btn p-0 text-primary me-3" href="https://www.facebook.com/profile.php?id=61585072553766" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <!-- <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a> -->
-                                <a class="btn p-0 text-primary me-3" href="https://www.instagram.com/devanka_it_solutions/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a class="btn p-0 text-primary me-0" href="https://www.linkedin.com/company/110251555" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="https://www.facebook.com/profile.php?id=61585072553766" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <!-- <a class="btn p-0 text-primary me-3" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+                                <a class="btn p-0 text-primary me-3" href="https://www.instagram.com/devanka_it_solutions/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a class="btn p-0 text-primary me-0" href="https://www.linkedin.com/company/110251555" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                             <div class="dropdown ms-3">
-                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown" aria-label="Select Language"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
                                 <div class="dropdown-menu rounded">
                                     <a href="#" class="dropdown-item" onclick="changeLanguage('en'); return false;" >English</a>
                                     <a href="#" class="dropdown-item" onclick="changeLanguage('ne'); return false">Nepali</a>
@@ -120,7 +134,7 @@
         <!-- Topbar End -->
 
         <!-- Navbar & Hero Start -->
-       <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+       <div class="container-fluid nav-bar bg-white px-0 px-lg-4 py-lg-0">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light"> 
             
@@ -130,7 +144,7 @@
             </a>
 
             <!-- TOGGLER -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span>
             </button>
 
@@ -143,7 +157,8 @@
                     <a href="#service" class="nav-item nav-link">Services</a>
                     <a href="#faq" class="nav-item nav-link">FAQ's</a>
                     <a href="#team" class="nav-item nav-link">Team</a>
-                    <a href="#client" class="nav-item nav-link">Clients</a>
+                    <a href="products.html" class="nav-item nav-link">Our Products</a>
+                    <a href="case-studies.html" class="nav-item nav-link">Case Studies</a>
                     <a href="#contact" class="nav-item nav-link">Contact</a>
                 </div>
 
@@ -163,7 +178,7 @@
 
             <!-- CALL BUTTON ON RIGHT SIDE -->
             <div class="d-none d-xl-flex flex-shrink-0 ps-4">
-                <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                <a href="tel:+9779817170324" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s" aria-label="Call Us">
                     <i class="fa fa-phone-alt fa-2x"></i>
                     <div class="position-absolute" style="top: 7px; right: 12px;">
                         <span><i class="fa fa-comment-dots text-secondary"></i></span>
@@ -209,8 +224,8 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
-                                    <h4  style="color: #ffde59;">Devanka IT Solutions Pvt. Ltd.</h4>
-                                    <!-- <h4 class="text-white text-uppercase fw-bold mb-4" style="text-decoration-color: #ffde59;"> Devanka </h4> -->
+                                    <p class="h4" style="color: #ffde59;">Devanka IT Solutions Pvt. Ltd.</p>
+                                    <!-- <p class="h4 text-white text-uppercase fw-bold mb-4" style="text-decoration-color: #ffde59;"> Devanka </p> -->
                                     <h1 class="display-1 text-white mb-4">Software, IT & Digital Marketing Company in Nepal</h1>
                                     <p class="mb-5 fs-5">Devanka IT Solutions Pvt. Ltd. is a top rated software and digital marketing company in Pokhara, Nepal specializing in Custom Software Development, Website Design, SEO, Social Media Marketing, Branding and Complete IT solutions for businesses looking to grow online and offline.
 
@@ -224,7 +239,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                             </div>
                             <div class="col-lg-5 animated fadeInRight">
                                 <div class="calrousel-img" style="object-fit: cover;">
-                                    <img src="wd.png" class="img-fluid w-100" alt="">
+                                    <img src="assets/images/wd.png" class="img-fluid w-100" alt="Website Design and Development" width="800" height="600">
                                 </div>
                             </div>
                         </div>
@@ -237,12 +252,12 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                         <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
                             <div class="col-lg-5 animated fadeInLeft">
                                 <div class="calrousel-img">
-                                    <img src="seo.png" class="img-fluid w-100" alt="">
+                                    <img src="assets/images/seo.png" class="img-fluid w-100" alt="SEO Services" width="800" height="600">
                                 </div>
                             </div>
                             <div class="col-lg-7 animated fadeInRight">
                                 <div class="text-sm-center text-md-end">
-                                    <h4 style="color: #ffde59;">Devanka IT Solutions Pvt. Ltd.</h4>
+                                    <p class="h4" style="color: #ffde59;">Devanka IT Solutions Pvt. Ltd.</p>
                                     <h1 class="display-1 text-white mb-4">Best Software, IT & Digital Marketing Company in Nepal</h1>
                                     <p class="mb-5 fs-5">Devanka IT Solutions Pvt. Ltd. is on its way to become one of the best software companies in Nepal specializing in custom software development, website development, SEO services, digital marketing, mobile app development and complete IT solutions. Our mission is to help businesses in Nepal and abroad build a strong online presence, achieve high Google rankings and grow through modern, scalable digital technologies.
                                     </p>
@@ -324,7 +339,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                 <div class="row g-5">
                     <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="about-item-content bg-white rounded p-5 h-100">
-                            <h4 class="text-primary">About Our Company</h4>
+                            <p class="h4 text-primary">About Our Company</p>
                             <h1 class="display-4 mb-4">Leading Software, IT & Digital Marketing Company in Nepal</h1>
                             <p>Devanka IT Solutions Pvt. Ltd. is a top rated software, IT and digital marketing company in Pokhara, Nepal dedicated to helping businesses grow through modern technology, high performance software, SEO optimized websites and result driven digital marketing solutions.
                             </p>
@@ -342,7 +357,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                             <div class="row g-4 justify-content-center">
                                 <div class="col-12">
                                     <div class="rounded bg-light">
-                                        <img src="au.png" class="img-fluid rounded w-100" alt="">
+                                        <img src="assets/images/au.png" class="img-fluid rounded w-100" alt="About Devanka" width="800" height="500">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -428,7 +443,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
         <div class="container-fluid service py-5" id="service">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
+                    <p class="h4 text-primary">Our Services</p>
                     <h1 class="display-4 mb-4">We Provide Best Services</h1>
                     <p class="mb-0">At Devanka IT Solutions Pvt. Ltd., We specialize in delivering innovative and result-driven technology solutions for businesses of all sizes. As a leading software and IT company in Nepal with a strong focus on digital marketing, SEO and web development we combine creativity, technology and strategy to help organizations achieve growth, enhance online visibility and maximize efficiency. Our team of experienced developers, designers and digital marketing professionals works collaboratively to provide scalable, secure and future ready solutions tailored to meet the unique needs of each client. By leveraging the latest IT trends, SEO best practices and digital marketing strategies. We ensure that your business not only stands out online but also reaches the right audience, drives engagement and achieves sustainable growth.
                     </p>
@@ -437,7 +452,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="it.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/it.png" class="img-fluid rounded-top w-100" alt="Custom Software Development" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-laptop-code fa-2x"></i>
                                 </div>
@@ -454,7 +469,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="wdd.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/wdd.png" class="img-fluid rounded-top w-100" alt="Website Design and Development" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-desktop fa-2x"></i>
                                 </div>
@@ -471,7 +486,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="seoo.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/seoo.png" class="img-fluid rounded-top w-100" alt="SEO Services" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-chart-line fa-2x"></i>
                                 </div>
@@ -488,7 +503,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="dm.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/dm.png" class="img-fluid rounded-top w-100" alt="Digital Marketing" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fa fa-bullhorn fa-2x"></i>
                                 </div>
@@ -506,7 +521,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="md.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/md.png" class="img-fluid rounded-top w-100" alt="Mobile App Development" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-mobile fa-2x"></i>
                                 </div>
@@ -524,7 +539,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                       <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="cs.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/cs.png" class="img-fluid rounded-top w-100" alt="Cloud Solutions" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-cloud fa-2x"></i>
                                 </div>
@@ -542,7 +557,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                       <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="cys.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/cys.png" class="img-fluid rounded-top w-100" alt="Cybersecurity" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-user-shield fa-2x"></i>
                                 </div>
@@ -560,7 +575,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                       <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="ui.png" class="img-fluid rounded-top w-100" alt="">
+                                <img src="assets/images/ui.png" class="img-fluid rounded-top w-100" alt="UI/UX Design" width="400" height="300">
                                 <div class="service-icon p-3">
                                     <i class="fas fa-magic fa-2x"></i>
                                 </div>
@@ -590,7 +605,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                     <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="h-100">
                             <div class="mb-5">
-                                <h4 class="text-primary">Some Important FAQ's</h4>
+                                <p class="h4 text-primary">Some Important FAQ's</p>
                                 <h1 class="display-4 mb-0">Common Frequently Asked Questions</h1>
                             </div>
                             <div class="accordion" id="accordionExample">
@@ -646,7 +661,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                         </div>
                     </div>
                     <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <img src="cq.png" class="img-fluid w-100" alt="">
+                        <img src="assets/images/cq.png" class="img-fluid w-100" alt="FAQ Questions" width="600" height="500">
                     </div>
                 </div>
             </div>
@@ -730,186 +745,49 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
         <!-- Blog End -->
 
         <!-- Team Start -->
-        <!-- <div class="container-fluid team pb-5">
+        <div class="container-fluid team pb-5" id="team">
             <div class="container pb-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
+                    <p class="h4 text-primary">Our Team</p>
                     <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+                    <p class="mb-0">Our dedicated team of professionals brings together years of experience in software development, design, and digital marketing to deliver exceptional results for your business.</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
+                <div class="row g-4" id="dynamic-team-container" style="min-height: 800px;">
+                    <div class="col-12 text-center py-5">
+                        <div class="spinner-border text-primary" role="status"></div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- Team End -->
 
         <!-- Testimonial Start -->
-        <!-- <div class="container-fluid testimonial pb-5">
+        <div class="container-fluid testimonial pb-5" id="testimonial">
             <div class="container pb-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
+                    <p class="h4 text-primary">Testimonial</p>
                     <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    <p class="mb-0">Discover how our software solutions and expert teams have transformed businesses and delivered real, measurable impact across various industries. Read what our clients have to say about partnering with Devanka.
                     </p>
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="dynamic-testimonial-carousel" class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s" style="min-height: 350px;">
+                    <!-- Dynamic testimonials will be injected here -->
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- Testimonial End -->
 
           <div class="container-fluid contact bg-light py-5" id="contact">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Contact Us</h4>
+                    <p class="h4 text-primary">Contact Us</p>
                     <h1 class="display-4 mb-4">If you have any comments please apply now</h1>
                 </div>
                 <div class="row g-5">
                     <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="contact-img d-flex justify-content-center" >
                             <div class="contact-img-inner">
-                                <img src="cu.png" class="img-fluid w-100"  alt="Image">
+                                <img src="assets/images/cu.png" class="img-fluid w-100" alt="Contact Us" width="500" height="500">
                             </div>
                         </div>
                     </div>
@@ -917,7 +795,8 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                         <div>
                             <h4 class="text-primary">Send Your Message</h4>
                             <!-- <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
-                            <form>
+                            <form id="contactForm">
+                                <div id="formMessage" class="d-none"></div>
                                 <div class="row g-3">
                                     <div class="col-lg-12 col-xl-6">
                                         <div class="form-floating">
@@ -957,7 +836,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
 
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3">Send Message</button>
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
                                     </div>
                                 </div>
                             </form>
@@ -1026,8 +905,8 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
 
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
+        <div class="container-fluid footer pt-4 pb-2 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container pt-3 pb-2">
                 <div class="row g-5">
                     <div class="col-xl-9">
                         <div class="mb-5">
@@ -1040,10 +919,10 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                                         </a>
                                         <p class="text-white mb-4">Leading Software Company | IT Company | Digital Marketing Agency in Pokhara, Nepal</p>
                                         <div class="footer-btn d-flex">
-                                            <a class="btn btn-md-square rounded-circle me-3" href="https://www.facebook.com/profile.php?id=61585072553766" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                            <!-- <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a> -->
-                                            <a class="btn btn-md-square rounded-circle me-3" href="https://www.instagram.com/devanka_it_solutions/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                            <a class="btn btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/110251555" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-3" href="https://www.facebook.com/profile.php?id=61585072553766" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                            <!-- <a class="btn btn-md-square rounded-circle me-3" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+                                            <a class="btn btn-md-square rounded-circle me-3" href="https://www.instagram.com/devanka_it_solutions/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-0" href="https://www.linkedin.com/company/110251555" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -1054,13 +933,13 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                                         <a href="#service"><i class="fas fa-angle-right me-2"></i> Services</a>
                                         <a href="#faq"><i class="fas fa-angle-right me-2"></i> FAQ's</a>
                                         <a href="#team"><i class="fas fa-angle-right me-2"></i> Team</a>
-                                        <a href="#client"><i class="fas fa-angle-right me-2"></i> Clients</a>
+                                        <a href="products.html"><i class="fas fa-angle-right me-2"></i> Our Products</a>
                                         <a href="#contact"><i class="fas fa-angle-right me-2"></i> Contact</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-4">
                                     <div class="footer-item">
-                                        <img src="logo1.png" alt="">
+                                        <img src="assets/logos/logo1.png" alt="Devanka Logo" width="200" height="100">
                                         <!-- <h4 class="mb-4 text-white">Instagram</h4>
                                         <div class="row g-3">
                                             <div class="col-4">
@@ -1116,7 +995,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="pt-3 mt-1" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
                             <div class="row g-0">
                                 <div class="col-12">
                                     <div class="row g-4">
@@ -1169,7 +1048,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
                             </div>
                             <div class="d-flex flex-shrink-0">
                                 <div class="footer-btn">
-                                    <a href="#" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                                    <a href="#" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s" aria-label="Call for Inquiries">
                                         <i class="fa fa-phone-alt fa-2x"></i>
                                         <div class="position-absolute" style="top: 2px; right: 12px;">
                                             <span><i class="fa fa-comment-dots text-secondary"></i></span>
@@ -1190,7 +1069,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
         
        <!-- Copyright Start -->
 <!-- Copyright Start -->
-<div class="container-fluid copyright py-4 bg-dark">
+<div class="container-fluid copyright py-3 bg-dark m-0">
     <div class="container text-center">
         <span class="text-light">
             <i class="fas fa-copyright me-2"></i>Devanka, All rights reserved.
@@ -1205,7 +1084,7 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top" aria-label="Back to Top"><i class="fa fa-arrow-up"></i></a>   
 
         
         <!-- JavaScript Libraries -->
@@ -1217,11 +1096,14 @@ Whether you need a new website, a mobile app, SEO services, Google ranking or a 
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
 
+        <!-- Supabase and Dynamic Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="js/public/team.js"></script>
+
+        <script src="js/public/testimonials.js?v=2"></script>
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-
+        <script src="js/public/main.js"></script>
         <script type="text/javascript">
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -1265,8 +1147,15 @@ function changeLanguage(lang) {
 
 <script>
 window.onload = function() {
-    window.scrollTo(0, 0); 
-    history.replaceState(null, null, " "); 
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 100);
+        }
+    } else {
+        window.scrollTo(0, 0); 
+        history.replaceState(null, null, " "); 
+    }
 };
 </script>
 
@@ -1287,6 +1176,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         
+        <!-- Contact Form Scripts -->
+        <script src="js/public/contact.js"></script>
     </body>
 
 </html>

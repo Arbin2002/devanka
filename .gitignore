@@ -1,0 +1,54 @@
+# ─── OS & Editor Junk ─────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ─── IDE / Editor Config ──────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.sublime-workspace
+
+# ─── Environment / Secrets ────────────────────────────────────────────────────
+# Never commit real secrets. If you add a build step in future,
+# use a .env file and keep it out of git.
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+
+# ─── Node (if you ever add a build step) ──────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+
+# ─── SCSS Build Output ────────────────────────────────────────────────────────
+# The compiled CSS is committed intentionally; ignore only maps
+*.css.map
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Temp / Scratch ───────────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.bak
+
+# ─── Cloudflare / Netlify Build Artifacts ─────────────────────────────────────
+.netlify/
+.cloudflare/
+.wrangler/
+functions/

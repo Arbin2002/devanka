@@ -1,7 +1,9 @@
 
 /*** Spinner Start ***/
-html{
+html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 
@@ -11,6 +13,11 @@ html{
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
 }
+
+/* Fix Owl Carousel Layout Shifts */
+.owl-carousel .owl-item, .header-carousel .header-carousel-item, .testimonial-carousel .testimonial-item { display: none; }
+.header-carousel .header-carousel-item:first-child, .testimonial-carousel .testimonial-item:first-child { display: block; }
+.owl-loaded .owl-item, .owl-loaded .header-carousel-item, .owl-loaded .testimonial-item { display: block; }
 
 #spinner.show {
     transition: opacity .5s ease-out, visibility 0s linear 0s;

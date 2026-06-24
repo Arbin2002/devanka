@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
     "use strict";
 
     // Spinner
@@ -45,38 +45,7 @@
 
 
 
-    // testimonial carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        center: false,
-        dots: false,
-        loop: true,
-        margin: 25,
-        nav : true,
-        navText : [
-            '<i class="fa fa-arrow-right"></i>',
-            '<i class="fa fa-arrow-left"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:2
-            },
-            1200:{
-                items:2
-            }
-        }
-    });
+    // testimonial carousel initialization moved to js/testimonials.js
 
 
     // Facts counter
@@ -95,7 +64,7 @@
     }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 400, 'easeInOutExpo');
         return false;
     });
 
